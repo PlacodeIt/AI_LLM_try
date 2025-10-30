@@ -1,0 +1,29 @@
+.filter-toggle:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+}
+
+.checkbox-group {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.checkbox-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.column-selector-container {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

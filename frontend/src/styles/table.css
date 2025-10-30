@@ -1,0 +1,283 @@
+.table-container {
+  background-color: var(--theme-light-color);
+  border-radius: 8px;
+  box-shadow: var(--theme-box-shadow-medium);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.table-wrapper-container {
+  overflow-x: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  margin-bottom: 0;
+  background-color: var(--theme-light-color);
+}
+
+/* Header styles */
+.table thead th {
+  background-color: var(--theme-primary-color);
+  color: var(--theme-light-color);
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--theme-secondary-color);
+  white-space: nowrap;
+}
+
+/* Cell styles */
+.table tbody td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Column selector styles */
+.column-selector-container {
+  background-color: var(--theme-light-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--theme-box-shadow-medium);
+}
+
+/* Filter toggle button */
+.filter-toggle {
+  margin: 1rem auto;
+  padding: 10px 20px;
+  background-color: var(--theme-primary-color);
+  color: var(--theme-light-color);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  border: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filter-toggle:hover {
+  background-color: var(--theme-secondary-color);
+}
+
+/* Scrollbar styling */
+.table-wrapper-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-wrapper-container::-webkit-scrollbar-thumb {
+  background: var(--theme-primary-color);
+  border-radius: 4px;
+}
+
+.table-wrapper-container::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-secondary-color);
+}
+
+/* Striped rows */
+.table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,0.02);
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-container {
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .column-selector-container {
+    margin: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Table styling */
+.table-container table {
+  width: 100%;
+  min-width: 1000px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table header styling */
+.table-container table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--theme-primary-color);
+  color: var(--theme-light-color);
+  padding: 12px;
+  font-weight: 500;
+  text-align: left;
+  z-index: 1;
+}
+
+.table-container table thead th:hover {
+  background-color: var(--theme-secondary-color);
+}
+
+/* Table body styling */
+.table-container table tbody tr {
+  transition: background-color var(--theme-transition-fast); 
+}
+
+.table-container table tbody tr:hover {
+  background-color: var(--theme-info-color); 
+}
+
+.table-container table tbody td {
+  padding: var(--theme-spacing-small) var(--theme-spacing-medium);
+  color: var(--theme-dark-color);
+  text-align: left; 
+  border: 1px solid var(--theme-secondary-color); 
+  transition: background-color var(--theme-transition-fast);
+}
+
+/* Table row striping */
+.table-container table tbody tr:nth-child(even) {
+  background-color: rgba(249, 249, 249, 0.5); 
+}
+
+.table-container table tbody tr:nth-child(odd) {
+  background-color: #ffffff; 
+}
+
+/* Empty row styling */
+.table-container .empty-row {
+  text-align: center;
+  color: var(--theme-secondary-color); 
+  padding: var(--theme-spacing-large);
+}
+
+/* Add or update these styles */
+.column-selector-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.column-selector {
+  background-color: var(--theme-primary-color);
+  color: var(--theme-text-color);
+  padding: var(--theme-spacing-medium);
+  border-radius: var(--theme-border-radius-medium);
+  box-shadow: var(--theme-box-shadow-medium);
+  max-width: 800px;
+  width: 100%;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--theme-spacing-medium);
+  padding: var(--theme-spacing-medium);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: var(--theme-spacing-small);
+}
+
+/* Make columns more flexible */
+.table-container th,
+.table-container td {
+  min-width: 120px;
+  max-width: 300px;
+  padding: var(--theme-spacing-small) var(--theme-spacing-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Allow message text column to be wider */
+.table-container th[data-column="messageText"],
+.table-container td[data-column="messageText"] {
+  min-width: 200px;
+  max-width: 400px;
+}
+
+/* Add these new styles */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.checkbox-item:hover {
+  background-color: var(--theme-light-color) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Style for custom checkboxes */
+.checkbox-item input[type="checkbox"] {
+  accent-color: var(--theme-primary-color);
+}
+
+/* Add smooth transitions */
+.column-selector-container {
+  transition: all 0.3s ease;
+}
+
+.checkbox-item {
+  transition: all 0.2s ease !important;
+}
+
+/* Add animation for note dismissal */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Style for the close button hover */
+.note-close-button:hover {
+  opacity: 0.8;
+}
+
+/* Style for the filter toggle button */
+.filter-toggle {
+  position: relative;
+  z-index: 2;
+}
+
+/* Update the search section fixed styles */
+.search-section-fixed {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: var(--theme-background-color);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
